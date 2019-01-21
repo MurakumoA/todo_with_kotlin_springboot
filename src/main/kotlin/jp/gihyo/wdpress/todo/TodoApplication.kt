@@ -11,12 +11,13 @@ import org.springframework.transaction.annotation.EnableTransactionManagement
 @EnableTransactionManagement
 class TodoApplication {
     companion object {
-        @JvmStatic fun main(args: Array<String>) {
+        @JvmStatic
+        fun main(args: Array<String>) {
             runApplication<TodoApplication>(*args)
         }
     }
 
     @Bean
     @ConfigurationProperties(prefix="spring.datasource")
-    open fun dataSource() = DataSourceBuilder.create().build()
+    fun dataSource() = DataSourceBuilder.create().build()
 }
